@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-500: #ffa217;
+    --color-primary-600: #f59300;
+    --color-white: #ffffff;
+    --color-gray500: #e9e9e9;
+
+    /* swiper pagination variables */
+    --swiper-pagination-color: var(--color-primary-500);
+  }
+}
+
+html {
+  font-family: var(--font-primary);
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+  height: 0.25rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--color-gray500);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-500);
+  border-radius: 100vh;
+  border: 0.2rem solid var(--color-primary-500);
+}
