@@ -1,7 +1,6 @@
-"use client";
-
+'use client';
 const Footer = () => {
-  return <footer className="container-max">Footer</footer>;
+  return <footer>Footer</footer>;
 };
 
 export default Footer;

@@ -1,18 +1,20 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import "../../public/fonts/product-sans/fonts.css";
-import Header from "components/layout/header";
-import Footer from "components/layout/footer";
+import type { Metadata } from 'next';
+
+import Footer from 'components/layout/footer';
+import Header from 'components/layout/header';
+
+import '../../public/fonts/product-sans/fonts.css';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "Title",
-  description: "Title",
+  title: 'Title',
+  description: 'Title',
   icons: {
     icon: [
       {
         // media: "(prefers-color-scheme: dark)",
-        url: "/images/favicon.ico",
-        href: "/images/favicon.ico",
+        url: '/images/favicon.ico',
+        href: '/images/favicon.ico',
       },
       // {
       //   media: "(prefers-color-scheme: light)",
@@ -23,14 +25,10 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className={`font-primary`}>
+    <html lang='en'>
+      <body className='font-primary container-max'>
         <Header />
         {children}
         <Footer />

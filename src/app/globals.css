@@ -4,9 +4,7 @@
 
 @layer base {
   :root {
-    --color-primary-500: #ffa217;
-    --color-primary-600: #f59300;
-    --color-white: #ffffff;
+    --color-primary: #ffa217;
     --color-gray500: #e9e9e9;
 
     /* swiper pagination variables */

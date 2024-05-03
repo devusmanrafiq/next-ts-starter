@@ -1,8 +1,15 @@
-"use-client";
-import React from "react";
+'use-client';
+
+import React from 'react';
+
+import Home from './components/home';
 
 const Page = () => {
-  return <div className="container-max">Page</div>;
+  return (
+    <>
+      <Home />
+    </>
+  );
 };
 
 export default Page;
