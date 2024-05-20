@@ -5,10 +5,10 @@
 @layer base {
   :root {
     --color-primary: #ffa217;
-    --color-gray500: #e9e9e9;
+    --color-gray: #e9e9e9;
 
     /* swiper pagination variables */
-    --swiper-pagination-color: var(--color-primary-500);
+    --swiper-pagination-color: var(--color-primary);
   }
 }
 
@@ -28,12 +28,12 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: var(--color-gray500);
+  background: var(--color-gray);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary-500);
+  background: var(--color-primary);
   border-radius: 100vh;
-  border: 0.2rem solid var(--color-primary-500);
+  border: 0.2rem solid var(--color-primary);
 }

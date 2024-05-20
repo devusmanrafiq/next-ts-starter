@@ -1,86 +1,87 @@
-import postcss, { PluginCreator } from 'postcss';
-import type { Config } from 'tailwindcss';
+import { PluginCreator } from "postcss";
+import type { Config } from "tailwindcss";
 
 // @ts-ignore
 const plugin: PluginCreator<any> = ({ addUtilities }) => {
   addUtilities({
-    '.container-max': {
+    ".container-max": {
       maxWidth: 1920,
-      margin: 'auto',
+      margin: "auto",
     },
   });
 };
 
 const config: Config = {
   content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary)',
+        primary: "var(--color-primary)",
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       spacing: {
-        '0.25': '1px',
-        88: '22rem',
+        "0.25": "1px",
+        88: "22rem",
       },
       borderWidth: {
-        '3': '3px',
+        "3": "3px",
       },
       fontFamily: {
-        primary: ['ProductSans', 'sans-serif'],
+        primary: ["ProductSans", "sans-serif"],
       },
       fontSize: {
-        '7.5xl': '4.5rem',
+        "7.5xl": "4.5rem",
       },
       screens: {
-        xsm: '480px',
-        sm: '640px',
-        md: '796px',
-        lg: '1024px',
-        xl: '1280px',
-        '2xl': '1440px',
-        '3xl': '1580px',
-        '4xl': '1850px',
+        xsm: "480px",
+        sm: "640px",
+        md: "796px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1440px",
+        "3xl": "1580px",
+        "4xl": "1850px",
       },
     },
     animation: {
-      'fade-in': 'fade-in 0.5s ease-out',
-      'fade-up': 'fade-up 0.5s ease-out',
-      spin: 'spin 1s linear infinite',
+      "fade-in": "fade-in 0.5s ease-out",
+      "fade-up": "fade-up 0.5s ease-out",
+      spin: "spin 1s linear infinite",
     },
     keyframes: {
-      'fade-in': {
-        '0%': {
-          opacity: '0',
+      "fade-in": {
+        "0%": {
+          opacity: "0",
         },
-        '100%': {
-          opacity: '1',
+        "100%": {
+          opacity: "1",
         },
       },
-      'fade-up': {
-        '0%': {
-          opacity: '0',
-          transform: 'translateY(40px)',
+      "fade-up": {
+        "0%": {
+          opacity: "0",
+          transform: "translateY(40px)",
         },
-        '100%': {
-          opacity: '1',
-          transform: 'translateY(0)',
+        "100%": {
+          opacity: "1",
+          transform: "translateY(0)",
         },
       },
 
       spin: {
-        '0%': {
-          transform: 'rotate(0deg)',
+        "0%": {
+          transform: "rotate(0deg)",
         },
-        '100%': {
-          transform: 'rotate(360deg)',
+        "100%": {
+          transform: "rotate(360deg)",
         },
       },
     },

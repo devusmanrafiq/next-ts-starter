@@ -2,7 +2,7 @@
 
 const handleCalendly = () => {
   const handleClick = () => {
-    window.open("https://calendly.com/highqdesk", "_blank");
+    window.open("link", "_blank");
   };
   return handleClick;
 };
