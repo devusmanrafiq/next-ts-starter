@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Footer from "components/layout/footer";
 import Header from "components/layout/header";
 
-import "../../public/fonts/product-sans/fonts.css";
+import "/public/fonts/product-sans/fonts.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     icon: [
       {
         // media: "(prefers-color-scheme: dark)",
-        url: "/images/favicon.ico",
-        href: "/images/favicon.ico",
+        url: "/public/images/favicon.ico",
+        href: "/public/images/favicon.ico",
       },
       // {
       //   media: "(prefers-color-scheme: light)",
