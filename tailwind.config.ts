@@ -35,7 +35,8 @@ const config: Config = {
         "3": "3px",
       },
       fontFamily: {
-        primary: ["ProductSans", "sans-serif"],
+        primary: "var(--font-product-sans)",
+        secondary: "var(--font-poppins)",
       },
       fontSize: {
         "7.5xl": "4.5rem",

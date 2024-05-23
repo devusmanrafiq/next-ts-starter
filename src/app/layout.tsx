@@ -3,8 +3,21 @@ import type { Metadata } from "next";
 import Footer from "components/layout/footer";
 import Header from "components/layout/header";
 
-import "/public/fonts/product-sans/fonts.css";
+import { Poppins } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  variable: "--font-poppins",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+});
+
+const productSans = localFont({
+  src: "../../public/fonts/ProductSans.ttf",
+  variable: "--font-product-sans",
+  preload: true,
+});
 
 export const metadata: Metadata = {
   title: "Title",
@@ -32,7 +45,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-primary container-max">
+      <body
+        className={`container-max ${productSans.variable} ${poppins.variable} ${productSans.className}`}
+      >
         <Header />
         {children}
         <Footer />
