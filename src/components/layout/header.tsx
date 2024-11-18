@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 const Header = () => {
   // const [open, setOpen] = useState(false);
@@ -7,12 +7,7 @@ const Header = () => {
 
   // const { isTablet } = useViewportWidth();
 
-  return (
-    <header>
-      Header
-      {/* <LanguageSwitcher /> */}
-    </header>
-  );
+  return <header>Header</header>;
 };
 
 export default Header;

@@ -1,22 +1,13 @@
 import type { Metadata } from "next";
-
-import Footer from "components/layout/footer";
-import Header from "components/layout/header";
-
 import { Poppins } from "next/font/google";
-import localFont from "next/font/local";
 import "./globals.css";
+import Header from "components/layout/header";
+import Footer from "components/layout/footer";
 
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--font-poppins",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
-
-const productSans = localFont({
-  src: "../../public/fonts/ProductSans.ttf",
-  variable: "--font-product-sans",
-  preload: true,
 });
 
 export const metadata: Metadata = {
@@ -40,13 +31,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
       <body
-        className={`container-max ${productSans.variable} ${poppins.variable} ${productSans.className}`}
+        className={`${poppins.variable} ${poppins.className} antialiased container-max`}
       >
         <Header />
         {children}
