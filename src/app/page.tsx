@@ -1,12 +1,7 @@
-import React from "react";
-import Home from "./components/home";
+import Home from './components/home';
 
-const Page = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
-};
+function Page() {
+  return <Home />;
+}
 
 export default Page;

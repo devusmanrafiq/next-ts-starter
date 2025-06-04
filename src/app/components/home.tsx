@@ -1,8 +1,7 @@
-import Button from "components/core-ui/button/button";
-import React from "react";
+import React from 'react';
 
 function Home() {
-  return <section>Home</section>;
+  return <section className='font-primary'>Home</section>;
 }
 
 export default Home;

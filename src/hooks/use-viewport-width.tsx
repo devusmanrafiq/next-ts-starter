@@ -1,28 +1,35 @@
-'use client';
-
 import { useEffect, useState } from 'react';
 
-// This is a custom hooks that will return the window width and height.
-
-const useViewportWidth = () => {
-  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
+const useScreenSize = () => {
+  const [breakpoints, setBreakpoints] = useState({
+    isDesktop: false,
+    isTablet: false,
+    isMobile: false,
+    isMobileOrTablet: false,
+  });
 
   useEffect(() => {
-    const handleWindowResize = () => {
-      if (typeof window !== 'undefined') {
-        setWindowWidth(window.innerWidth);
-      }
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      const md = 768;
+      const lg = 1024;
+
+      setBreakpoints({
+        isDesktop: width >= lg,
+        isTablet: width >= md && width < lg,
+        isMobile: width < md,
+        isMobileOrTablet: width < lg,
+      });
     };
 
-    window.addEventListener('resize', handleWindowResize);
-    return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', handleWindowResize);
-      }
-    };
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
 
-  return { windowWidth, isMobile: windowWidth < 480, isTablet: windowWidth < 1024 };
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return breakpoints;
 };
 
-export default useViewportWidth;
+export default useScreenSize;

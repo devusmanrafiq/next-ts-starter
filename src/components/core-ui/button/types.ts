@@ -1,12 +1,7 @@
-export interface IButtonProps {
-  children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  type?: "button" | "submit" | "reset";
-  disabled?: boolean;
-  variant?: "primary" | "secondary" | "text";
-  size?: "small" | "medium" | "large";
-  fullWidth?: boolean;
-  wrapperClassName?: string;
-  loading?: boolean;
+export interface IButtonProps extends React.HTMLProps<HTMLButtonElement> {
+  type?: 'submit' | 'reset' | 'button';
+  variant?: 'text' | 'primary' | 'secondary' | 'rounded';
+  children?: React.ReactNode;
+  prefixElement?: React.ReactNode;
+  suffixElement?: React.ReactNode;
 }
