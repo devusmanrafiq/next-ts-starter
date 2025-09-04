@@ -6,10 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint . --ext .js,.jsx,.ts,.tsx",
+    "lint": "next lint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
     "prettier": "prettier --check .",
     "prettier:fix": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "npm run lint && npm run prettier"
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
