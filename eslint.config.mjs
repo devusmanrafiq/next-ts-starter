@@ -18,6 +18,9 @@ const compat = new FlatCompat({
 });
 
 export default [
+  {
+    ignores: ['.next', 'node_modules', 'dist'],
+  },
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
@@ -50,6 +53,12 @@ export default [
       '@typescript-eslint/no-unused-vars': 'warn',
       'import/prefer-default-export': 'off',
       'no-console': 'warn',
+    },
+  },
+  {
+    files: ['eslint.config.mjs'],
+    rules: {
+      'import/no-anonymous-default-export': 'off',
     },
   },
 ];
