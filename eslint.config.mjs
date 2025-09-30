@@ -53,6 +53,7 @@ export default [
       '@typescript-eslint/no-unused-vars': 'warn',
       'import/prefer-default-export': 'off',
       'no-console': 'warn',
+      '@next/next/no-img-element': 'off',
     },
   },
   {

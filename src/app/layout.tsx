@@ -4,6 +4,7 @@ import { Poppins } from 'next/font/google';
 import Container from '@/components/core-ui/container/container';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
+import { ConfigProvider } from 'antd';
 
 import './globals.css';
 
@@ -40,11 +41,21 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${poppins.variable} antialiased`}>
-        <Container>
-          <Header />
-          {children}
-          <Footer />
-        </Container>
+        <ConfigProvider
+          theme={{
+            token: {
+              colorPrimary: '#2366f5',
+              fontFamily: 'Poppins',
+            },
+            components: {},
+          }}
+        >
+          <Container>
+            <Header />
+            {children}
+            <Footer />
+          </Container>
+        </ConfigProvider>
       </body>
     </html>
   );
