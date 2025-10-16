@@ -1,6 +1,7 @@
 import { FlatCompat } from '@eslint/eslintrc';
 import js from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
+import eslintComments from 'eslint-plugin-eslint-comments';
 import importPlugin from 'eslint-plugin-import';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import prettier from 'eslint-plugin-prettier';
@@ -19,7 +20,7 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['.next', 'node_modules', 'dist'],
+    ignores: ['.next', 'node_modules', 'dist', 'commitlint.config.cjs'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,
@@ -37,6 +38,7 @@ export default [
       prettier,
       import: importPlugin,
       'jsx-a11y': jsxA11y,
+      'eslint-comments': eslintComments,
     },
     settings: {
       react: { version: 'detect' },
@@ -54,6 +56,10 @@ export default [
       'import/prefer-default-export': 'off',
       'no-console': 'warn',
       '@next/next/no-img-element': 'off',
+      'eslint-comments/no-unused-disable': 'error',
+      'eslint-comments/disable-enable-pair': ['error', { allowWholeFile: true }],
+      'eslint-comments/no-unlimited-disable': 'error',
+      'eslint-comments/no-unused-enable': 'error',
     },
   },
   {

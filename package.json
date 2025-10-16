@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "tsc --noEmit && next build",
     "start": "next start",
     "lint": "next lint . --ext .js,.jsx,.ts,.tsx --max-warnings=0",
     "prettier": "prettier --check .",
@@ -21,6 +21,7 @@
     "tw-classnames": "^1.0.6"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^20.0.0",
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
@@ -29,8 +30,10 @@
     "@types/react-dom": "^19",
     "@typescript-eslint/eslint-plugin": "^8.42.0",
     "@typescript-eslint/parser": "^8.42.0",
+    "commitlint": "^20.1.0",
     "eslint": "^9.34.0",
     "eslint-config-next": "15.3.3",
+    "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-prettier": "^5.5.4",
