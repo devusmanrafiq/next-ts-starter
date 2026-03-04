@@ -1,16 +1,22 @@
 import type { Metadata } from 'next';
-import { Poppins } from 'next/font/google';
+import { Inter, Poppins } from 'next/font/google';
 
 import Container from '@/components/core-ui/container/container';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
-import { ConfigProvider } from 'antd';
+import AntdProvider from '@/providers/antd-provider';
 
 import './globals.css';
 
 const poppins = Poppins({
   subsets: ['latin'],
   variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
 });
 
@@ -40,22 +46,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className={`${poppins.variable} antialiased`}>
-        <ConfigProvider
-          theme={{
-            token: {
-              colorPrimary: '#2366f5',
-              fontFamily: 'Poppins',
-            },
-            components: {},
-          }}
-        >
+      <body className={`${poppins.variable} ${inter.variable} antialiased`}>
+        <AntdProvider>
           <Container>
             <Header />
             {children}
             <Footer />
           </Container>
-        </ConfigProvider>
+        </AntdProvider>
       </body>
     </html>
   );

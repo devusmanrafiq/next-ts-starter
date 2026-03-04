@@ -1,8 +1,14 @@
-@import 'tailwindcss';
+@layer theme, base, antd, components, utilities;
+
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
 
 :root {
   --color-primary: #2366f5;
   --color-gray: #a1a1a1;
+  --font-primary: 'Poppins', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
 }
 
 html {
@@ -12,6 +18,7 @@ html {
 body {
   overflow-x: hidden;
   background-color: var(--color-gray);
+  font-family: var(--font-primary);
 }
 
 ::-webkit-scrollbar {
@@ -39,6 +46,7 @@ body {
 
   /* Font Families */
   --font-primary: var(--font-primary);
+  --font-secondary: var(--font-secondary);
 
   /* Font Size */
   --text-xxs: 0.625rem; /* 10px */
