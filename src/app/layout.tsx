@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 
-import Container from '@/components/core-ui/container/container';
-import Footer from '@/components/layout/footer';
-import Header from '@/components/layout/header';
-import AntdProvider from '@/providers/antd-provider';
+import AntdProvider from 'providers/antd-provider';
+
+import Container from 'components/core-ui/container/container';
+import Footer from 'components/layout/footer';
+import Header from 'components/layout/header';
 
 import './globals.css';
 
@@ -27,8 +28,8 @@ export const metadata: Metadata = {
     icon: [
       {
         // media: "(prefers-color-scheme: dark)",
-        url: '/images/favicon.ico',
-        href: '/images/favicon.ico',
+        url: '/favicon.ico',
+        href: '/favicon.ico',
       },
       // {
       //   media: "(prefers-color-scheme: light)",
